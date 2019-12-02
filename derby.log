@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Tue Nov 26 08:01:43 CST 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-016e-a804-96c7-0000060e7d40 
-on database directory C:\Users\r.paredes.bernal\derbydb\skills_dashboard_db  with class loader WebAppClassLoader=Skills Dashboard REST@127f9161 
-Loaded from file:/C:/Users/r.paredes.bernal/.m2/repository/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar
+Mon Dec 02 17:03:44 CST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-016e-c8da-fa2a-00000cc2a5b8 
+on database directory C:\Users\angel.daniel.alonso\derbydb\skills_dashboard_db  with class loader WebAppClassLoader=Skills Dashboard REST@bc4d5e1 
+Loaded from file:/C:/Users/angel.daniel.alonso/.m2/repository/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_201-b09
-user.dir=C:\Users\r.paredes.bernal\git\skills_dashboard_rest
+java.runtime.version=1.8.0_231-b11
+user.dir=C:\Users\angel.daniel.alonso\Documents\java\skills_dashboard_java
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
