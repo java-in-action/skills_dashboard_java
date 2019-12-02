@@ -20,7 +20,7 @@ public class CreateDerbyDB {
 	    // URL format is
 	    // jdbc:derby:<local directory to save data>
 	    // -------------------------------------------
-	    String dbUrl = "jdbc:derby:C:\\Users\\r.paredes.bernal\\derbydb\\skills_dashboard_db;create=true";
+		String dbUrl = "jdbc:derby:C:\\Users\\angel.daniel.alonso\\derbydb\\skills_dashboard_db;create=true";
 	    conn = DriverManager.getConnection(dbUrl);
 	  }
 	 
@@ -28,7 +28,7 @@ public class CreateDerbyDB {
 	    Statement stmt = conn.createStatement();
 	 
 	    // drop table
-	    //stmt.executeUpdate("drop table employees");
+	    stmt.executeUpdate("drop table employees");
 	 
 	    // create table
 	    String fields = "(sysId int primary key, eId varchar(30), name varchar(30)," +
