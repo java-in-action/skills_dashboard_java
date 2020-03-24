@@ -1,48 +1,59 @@
 package com.acc.bean;
 
 public class Employee {
-	private int SysId;
+	private int sysId;
 	private String eId;
 	private String name;
-	private int Level;
+	private int level;
 	private String location;
-	private String bithday;
+	private String birthday;
+
 	public int getSysId() {
-		return SysId;
+		return sysId;
 	}
+
 	public void setSysId(int sysId) {
-		SysId = sysId;
+		this.sysId = sysId;
 	}
+
 	public String geteId() {
 		return eId;
 	}
+
 	public void seteId(String eId) {
 		this.eId = eId;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getLevel() {
-		return Level;
+		return level;
 	}
+
 	public void setLevel(int level) {
-		Level = level;
+		this.level = level;
 	}
+
 	public String getLocation() {
 		return location;
 	}
+
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getBithday() {
-		return bithday;
+
+	public String getBirthday() {
+		return birthday;
 	}
-	public void setBithday(String bithday) {
-		this.bithday = bithday;
+
+	public void setBirthday(String bithday) {
+		this.birthday = bithday;
 	}
-	
-	
+
 }
