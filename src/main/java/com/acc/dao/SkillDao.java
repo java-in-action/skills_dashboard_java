@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.acc.bean.Skill;
-import com.acc.util.ConnectorDerby;
+import com.acc.util.ConnectorMysql;
 
 public class SkillDao {
     public List<Skill> getSkills() {
         List<Skill> res;
 
-        ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
-        Connection conn = connectorDerby.getConn();
+        ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
+        Connection conn = connectorMysql.getConn();
 
         try {
             Statement statement = conn.createStatement();
@@ -28,7 +28,7 @@ public class SkillDao {
                 res.add(createSkill(rs));
             }
         } catch (Exception e) {
-            throw new RuntimeException("Algo saliÃ³ mal al hacer ejecutar la query", e);
+            throw new RuntimeException("Algo salió mal al hacer ejecutar la query", e);
         }
 
         return res;
@@ -37,8 +37,8 @@ public class SkillDao {
     public List<Skill> getSkillsByEmployeeId(int sysId) {
         List<Skill> res;
 
-        ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
-        Connection conn = connectorDerby.getConn();
+        ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
+        Connection conn = connectorMysql.getConn();
 
         try {
             PreparedStatement statement = conn.prepareStatement(
@@ -53,7 +53,7 @@ public class SkillDao {
                 res.add(createSkill(rs));
             }
         } catch (Exception e) {
-            throw new RuntimeException("Algo saliÃ³ mal al hacer ejecutar la query", e);
+            throw new RuntimeException("Algo salió mal al hacer ejecutar la query", e);
         }
 
         return res;

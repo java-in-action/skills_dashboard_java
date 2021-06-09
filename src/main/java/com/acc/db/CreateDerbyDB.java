@@ -6,6 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * This class is obsolete and now derby it's replaced by mysql on aws
+ * 
+ * @author angel.alonso
+ *
+ */
+/*
 public class CreateDerbyDB {
 	Connection conn;
 
@@ -80,4 +87,4 @@ public class CreateDerbyDB {
 					rs.getInt("level"), rs.getString("location"), rs.getString("birthday"));
 		}
 	}
-}
+}*/

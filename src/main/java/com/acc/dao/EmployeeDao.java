@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.acc.bean.Employee;
-import com.acc.util.ConnectorDerby;
+import com.acc.util.ConnectorMysql;
 
 public class EmployeeDao {
 	// SELECTs
 	public ArrayList<Employee> getEmployees() {
 		ArrayList<Employee> employees = new ArrayList<Employee>();
-		ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
+		ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
 
-		Connection conn = connectorDerby.getConn();
+		Connection conn = connectorMysql.getConn();
 
 		try {
 			Statement stmt = conn.createStatement();
@@ -37,23 +37,26 @@ public class EmployeeDao {
 
 	public Employee getEmployee(Integer sysId) {
 		Employee res;
-
-		ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
-		Connection conn = connectorDerby.getConn();
+		
+		ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
+		System.out.println("ConnectorMysql: " + connectorMysql);
+		Connection conn = connectorMysql.getConn();
+		System.out.println("conn: " + conn);
 
 		try {
 			PreparedStatement ps = conn.prepareStatement("SELECT * FROM employees WHERE sysId = ?");
 			ps.setInt(1, sysId);
 
+			System.out.println(ps.toString());
 			ResultSet rs = ps.executeQuery();
-
+			System.out.println("rs: " + rs);
 			if (rs.next()) {
 				res = createEmployee(rs);
 			} else {
 				res = null;
 			}
 		} catch (Exception e) {
-			throw new RuntimeException("Algo saliÃ³ mal al hacer la llamada", e);
+			throw new RuntimeException("Falla en el método getEmployee(int)", e);
 		}
 
 		return res;
@@ -62,7 +65,7 @@ public class EmployeeDao {
 	// INSERTs
 	public int insertEmployee(Employee employee, String responsable) {
 		if (employee == null)
-			throw new NullPointerException("No se proveyÃ³ un empleado -- Insert employee");
+			throw new NullPointerException("No se proveyó un empleado -- Insert employee");
 
 		employee.setSysId(new Random().nextInt(Integer.MAX_VALUE));
 
@@ -70,8 +73,8 @@ public class EmployeeDao {
 
 		System.out.println("Insert employee SYS_ID " + employee.getSysId() + " | By " + responsable);
 
-		ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
-		Connection conn = connectorDerby.getConn();
+		ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
+		Connection conn = connectorMysql.getConn();
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(
@@ -88,7 +91,7 @@ public class EmployeeDao {
 
 			res = ps.executeUpdate();
 		} catch (Exception e) {
-			throw new RuntimeException("Algo saliÃ³ mal al hacer la llamada", e);
+			throw new RuntimeException("Algo salió mal al hacer la llamada", e);
 		}
 
 		return res;
@@ -100,8 +103,8 @@ public class EmployeeDao {
 
 		System.out.println("Update employee SYS_ID " + employee.getSysId() + " | By " + responsable);
 
-		ConnectorDerby connectorDerby = ConnectorDerby.getConnector();
-		Connection conn = connectorDerby.getConn();
+		ConnectorMysql connectorMysql = ConnectorMysql.getConnector();
+		Connection conn = connectorMysql.getConn();
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(
@@ -119,7 +122,7 @@ public class EmployeeDao {
 
 			res = ps.executeUpdate();
 		} catch (Exception e) {
-			throw new RuntimeException("Algo saliÃ³ mal al hacer la llamada", e);
+			throw new RuntimeException("Algo salió mal al hacer la llamada", e);
 		}
 
 		return res;

@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This class is obsolete and now derby it's replaced by mysql on aws
+ * 
+ * @author angel.alonso
+ *
+ */
+/*
 public class ConnectorDerby {
 	private static final ConnectorDerby connector = new ConnectorDerby();
 	
@@ -26,4 +33,4 @@ public class ConnectorDerby {
 		return conn;
 	}
 
-}
+}*/

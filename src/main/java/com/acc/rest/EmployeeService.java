@@ -1,6 +1,5 @@
 package com.acc.rest;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,22 +15,11 @@ import com.acc.bean.Employee;
 import com.acc.bean.Skill;
 import com.acc.dao.EmployeeDao;
 import com.acc.dao.SkillDao;
-import com.acc.db.CreateDerbyDB;
 
 @Path("/employees")
 public class EmployeeService {
-
-	static {
-		CreateDerbyDB cddb = new CreateDerbyDB();
-		try {
-			cddb.connectionToDerby();
-			cddb.normalDbUsage();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new RuntimeException("No se pudo inicializar la base de datos...", e);
-		}
-	}
-
+	
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Employee> getEmployees() {
