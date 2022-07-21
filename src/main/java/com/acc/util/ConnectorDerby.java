@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectorDerby {
 	private static final ConnectorDerby connector = new ConnectorDerby();
 	
-	private final String DEB_URL = "jdbc:derby:C:\\Users\\angel.daniel.alonso\\derbydb\\skills_dashboard_db;create=true";
+	private final String DEB_URL = "jdbc:derby:C:\\temp\\derbydb\\skills_dashboard_db;create=true";
 	private Connection conn;
 
 	private ConnectorDerby() {
