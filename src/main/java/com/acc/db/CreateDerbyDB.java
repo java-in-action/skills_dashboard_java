@@ -21,7 +21,7 @@ public class CreateDerbyDB {
 		// URL format is
 		// jdbc:derby:<local directory to save data>
 		// -------------------------------------------
-		String dbUrl = "jdbc:derby:C:\\temp\\derbydb\\skills_dashboard_db;create=true";
+		String dbUrl = "jdbc:derby:.derbydb/skills_dashboard_db;create=true";
 		conn = DriverManager.getConnection(dbUrl);
 	}
 

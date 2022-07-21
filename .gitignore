@@ -6,3 +6,5 @@ target/
 .bin/
 bin/
 logs/
+*.log
+.derbydb
