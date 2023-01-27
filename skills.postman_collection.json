@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "fcd26ad4-f139-4093-9e08-208c29d849b0",
+		"name": "skills",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all employees",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9001/skills/api/v1/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"skills",
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all skills",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9001/skills/api/v1/skills",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"skills",
+						"api",
+						"v1",
+						"skills"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
